@@ -1,0 +1,1201 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Mulish', sans-serif;
+}
+
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #131820;
+	overflow-wrap: break-word;
+}
+
+p {
+	color: #6f748b;
+	overflow-wrap: break-word;
+}
+
+a {
+	text-decoration: none;
+}
+
+#root,
+#app {
+	isolation: isolate;
+}
+
+header,
+section,
+footer {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/**   
+ * Appbar Styling
+ */
+
+.appbar {
+	padding: 1.5rem 1.25rem;
+
+	.appbar-container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		width: inherit;
+		max-width: 80rem;
+	}
+
+	.appbar-logo {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5rem;
+
+		min-width: 6.5rem;
+
+		& img {
+			width: 100%;
+			height: auto;
+			max-width: 25px;
+		}
+
+		& h4 {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-size: 18px;
+			color: #020817
+		}
+
+		&:hover {
+			opacity: 0.75;
+		}
+	}
+}
+
+.appbar-navs {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+
+	.appbar-links {
+		display: inherit;
+		flex-direction: inherit;
+		align-items: inherit;
+		gap: inherit;
+
+		& a {
+			padding-bottom: .25rem;
+			position: relative;
+
+			font-size: 1rem;
+			text-decoration: none;
+			color: #131820;
+		}
+
+		& a .underline {
+			position: absolute;
+			left: 0;
+			bottom: -2px;
+
+			transition: width 0.3s ease;
+			background-color: #131820;
+
+			height: 2px;
+			width: 0%;
+		}
+
+		& a:hover .underline {
+			width: 100%;
+		}
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+}
+
+.mobile-menu-toggle {
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	cursor: pointer;
+
+	@media (max-width: 768px) {
+		display: flex;
+	}
+}
+
+.hamburger {
+	width: 25px;
+	height: 2px;
+	background: #131820;
+	margin: 0.25rem 0;
+	transition: 0.3s;
+	border-radius: 2px;
+
+	&:nth-child(3) {
+		width: 15px;
+		margin-left: auto;
+	}
+
+}
+
+.mobile-menu {
+	width: 100%;
+	display: none;
+	position: absolute;
+	top: 3.5rem;
+	left: 0;
+	z-index: 99;
+	box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+	display: block;
+	animation: slideDown 0.2s ease-out;
+}
+
+.mobile-appbar-links {
+	padding: 1rem 2.5rem;
+	display: flex;
+	flex-direction: column;
+
+	background-color: #ffffff;
+
+	& a {
+		padding: 1rem 0;
+
+		font-size: 1rem;
+		font-weight: 500;
+		text-decoration: none;
+		color: #131820;
+		transition: 0.2s ease;
+
+		&:hover {
+			opacity: 55%;
+		}
+	}
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-15px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+/**  
+ * Hero Styling
+ */
+
+.hero {
+	padding: 6rem 1.25rem;
+
+	.hero-container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 5rem;
+
+		width: 100%;
+		max-width: 80rem;
+
+		& img {
+			flex: 1;
+
+			object-fit: cover;
+			transition: transform 0.3s ease;
+			border-radius: 1.25rem;
+
+			height: auto;
+			max-height: 37.5rem;
+
+			width: 100%;
+			max-width: auto;
+
+			@media (max-width: 480px) {
+				display: none;
+			}
+		}
+	}
+}
+
+.hero-content {
+	flex: 1 0 45%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 2.5rem;
+
+	.hero-content-text {
+		display: inherit;
+		flex-direction: inherit;
+		justify-content: inherit;
+		gap: 1rem;
+
+		& h3 {
+			font-size: 4rem;
+			line-height: 1.25;
+
+			& span {
+				color: #21C45D;
+			}
+		}
+	}
+
+	.hero-content-btn {
+		display: inherit;
+		flex-direction: row;
+		justify-content: inherit;
+		gap: 1rem;
+	}
+}
+
+/**  
+ * About Styling
+ */
+
+.about {
+	padding: 6rem 1.25rem;
+
+	.about-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2.5rem;
+
+		width: 100%;
+		max-width: 80rem;
+	}
+
+	.about-heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+		max-width: 50rem;
+
+		& h4 {
+			font-size: 2rem;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		& p {
+			text-align: center;
+		}
+	}
+}
+
+.about-info {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 1rem;
+
+	.about-info-card {
+		padding: 2rem 0.75rem;
+
+		flex: 1 1 20rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.75rem;
+
+		border: 1px solid rgba(19, 24, 32, 0.1);
+		border-radius: 1rem;
+
+		height: 100%;
+		min-height: 15.5rem;
+
+
+		& h5 {
+			font-size: 1.35rem;
+			font-weight: 600;
+		}
+
+		& p {
+			text-align: center;
+		}
+
+		& div .fa-location-arrow {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			background-color: #e8f9ee;
+			color: #42cd75;
+			border-radius: 50%;
+
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+
+
+		& div .fa-info {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			background-color: #f4eefc;
+			color: #9f73e6;
+			border-radius: 50%;
+
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+
+
+		& div .fa-seedling {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			background-color: #fdf8ec;
+			color: #f4c243;
+			border-radius: 50%;
+
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+	}
+}
+
+.plan {
+	padding: 4rem 1.25rem;
+
+	.plan-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2.5rem;
+
+		width: 100%;
+		max-width: 80rem;
+	}
+
+	.plan-heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+		max-width: 50rem;
+
+		& h4 {
+			font-size: 2rem;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		& p {
+			text-align: center;
+		}
+	}
+}
+
+.plan-card {
+	padding: 1.5rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	border: 1px solid rgba(19, 24, 32, 0.1);
+	border-radius: 1rem;
+
+	width: 100%;
+	max-width: 60rem;
+
+	.plan-card-heading {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		width: 100%;
+
+		& div {
+			display: inherit;
+			flex-direction: row;
+			align-items: center;
+			justify-content: inherit;
+			gap: 0.5rem;
+
+			& i {
+				font-size: 20px;
+				color: #21C45D;
+			}
+
+			& h6 {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	.plan-card-inputs {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		width: 100%;
+	}
+
+	.plan-card-dropdowns,
+	.plan-card-fields {
+		flex: 1 0 20rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+
+		overflow: hidden;
+
+		gap: 0.75rem;
+	}
+}
+
+/**  
+ * Calendar Styling
+ */
+.calendar {
+	padding: 4rem 1.25rem;
+
+	.calendar-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2.5rem;
+
+		width: 100%;
+		max-width: 80rem;
+	}
+
+	.calendar-heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+		max-width: 50rem;
+
+		& h4 {
+			font-size: 2rem;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		& p {
+			text-align: center;
+		}
+	}
+}
+
+.calendar-card {
+	padding: 1.5rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 1.5rem;
+
+	border: 1px solid rgba(19, 24, 32, 0.1);
+	border-radius: 1rem;
+
+	width: 100%;
+
+	.calendar-card-heading {
+		display: inherit;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 2rem;
+
+		width: 100%;
+
+		& .plan-card-heading-title {
+			display: inherit;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+
+			& .plan-card-heading-title-label {
+				display: inherit;
+				flex-direction: row;
+				align-items: center;
+				gap: 0.5rem;
+
+				& i {
+					font-size: 1.25rem;
+				}
+
+				& h6 {
+					font-family: 'Plus Jakarta Sans', sans-serif;
+					font-size: 1.25rem;
+					font-weight: 600;
+				}
+			}
+		}
+
+		& .dropdown {
+			max-width: 16rem;
+		}
+	}
+}
+
+.calendar-rice,
+.calendar-corn,
+.calendar-eggplant,
+.calendar-coconut,
+.calendar-banana {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+	width: 100%;
+
+	transition: 0.3s ease;
+
+	.calendar-season {
+		padding-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 0.5rem;
+		width: 100%;
+
+		.calendar-season-heading {
+			display: inherit;
+			align-items: center;
+			justify-content: space-between;
+
+			width: 100%;
+
+			& span {
+				font-size: 1.1rem;
+			}
+		}
+
+		.calender-season-carousel {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 1rem;
+
+			width: 100%;
+			overflow-x: auto;
+			scroll-behavior: smooth;
+
+		}
+	}
+}
+
+
+.calendar-card-prep {
+	padding: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 1rem;
+
+	border: 1px solid rgba(19, 24, 32, 0.1);
+	border-radius: 1rem;
+
+	width: 100%;
+	height: 100%;
+	min-width: 11rem;
+	min-height: 7rem;
+
+	& div {
+		display: inherit;
+		align-items: center;
+		justify-content: space-between;
+
+		& p {
+			font-size: 1rem;
+			font-weight: 700;
+			color: #131820;
+		}
+
+		& .fa-cloud {
+			color: #256cdf;
+		}
+
+		& .fa-cloud-rain {
+			color: #999999;
+		}
+
+		& .fa-sun {
+			color: #f0c84d;
+		}
+	}
+
+	& .calendar-blue {
+		padding: 4px 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 0.85rem;
+		font-weight: 600;
+
+		background-color: #dbeafe;
+		color: #3050b6;
+		border-radius: 1rem;
+
+		width: 100%;
+	}
+
+	& .calendar-green {
+		padding: 4px 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 0.85rem;
+		font-weight: 600;
+
+		background-color: #dcfce7;
+		color: #3a8054;
+		border-radius: 1rem;
+
+		width: 100%;
+	}
+
+	& .calendar-grey {
+		padding: 4px 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 0.85rem;
+		font-weight: 600;
+
+		background-color: #f3f4f6;
+		color: #2b3542;
+		border-radius: 1rem;
+
+		width: 100%;
+	}
+
+
+	& .calendar-yellow {
+		padding: 4px 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 0.85rem;
+		font-weight: 600;
+
+		background-color: #FEF3C7;
+		color: #ae6e3e;
+		border-radius: 1rem;
+
+		width: 100%;
+	}
+}
+
+.calendar-legend {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 1rem;
+
+	& span {
+		font-size: 1.10rem;
+		font-weight: 700;
+	}
+
+	.calendar-legend-items {
+		display: inherit;
+		flex-direction: row;
+		align-items: inherit;
+		justify-content: inherit;
+		gap: 2rem;
+
+		& div {
+			display: inherit;
+			flex-direction: row;
+			align-items: center;
+			justify-content: inherit;
+			gap: 0.5rem;
+
+			& span {
+				font-size: 1rem;
+				font-weight: 600;
+			}
+
+			& .fa-cloud {
+				color: #256cdf;
+			}
+
+			& .fa-cloud-rain {
+				color: #999999;
+			}
+
+			& .fa-sun {
+				color: #f0c84d;
+			}
+		}
+	}
+}
+
+
+/**  
+ * Contact Styling
+ */
+
+.contact {
+	padding: 6rem 1.25rem;
+	background-color: #21C45D;
+
+	.contact-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 100%;
+		max-width: 80rem;
+	}
+}
+
+.contact-info {
+	padding: 4rem 2.5rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+
+	background-color: #ffffff;
+	border-radius: 1rem;
+
+	width: 100%;
+
+	& h3 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	& p {
+		text-align: center;
+	}
+
+	& div {
+		display: inherit;
+		flex-direction: row;
+		align-items: inherit;
+		justify-content: inherit;
+		gap: 2.5rem;
+	}
+}
+
+.contact-info-link a {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+
+	transition: 0.3s ease;
+
+	& i,
+	span {
+		font-size: 1.5rem;
+		color: #131820;
+	}
+
+	&:hover {
+		transform: translateY(-2px);
+		opacity: 0.55;
+	}
+}
+
+/**  
+ * Input Fields Styling
+ */
+
+.footer {
+	padding: 4rem 1.25rem;
+
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5rem;
+
+		width: 100%;
+		max-width: 80rem;
+	}
+}
+
+.footer-upper {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 5rem;
+
+	width: 100%;
+
+	.footer-info {
+		flex: 1;
+		display: inherit;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 1rem;
+	}
+
+	.footer-pages {
+		flex: 1 1 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 5rem;
+
+	}
+
+	@media (max-width: 480px) {
+		flex-direction: column;
+	}
+}
+
+.footer-info-logo {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+
+	min-width: 6.5rem;
+
+	& img {
+		width: 100%;
+		height: auto;
+		max-width: 25px;
+	}
+
+	& h4 {
+		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-size: 18px;
+		color: #020817
+	}
+
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+.footer-info-socials {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+
+	& a i {
+		font-size: 1.25rem;
+		color: #131820;
+
+		transition: 0.3s ease;
+
+		&:hover {
+			transform: translateY(-2px);
+			opacity: 0.55;
+		}
+	}
+}
+
+.footer-navs {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	width: 100%;
+
+	& h6 {
+		font-size: 1rem;
+	}
+
+	.footer-navs-links {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+
+		& div {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		& a {
+			color: #131820;
+			text-decoration: none;
+			transition: all 0.2s ease;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.footer-line {
+	width: 100%;
+	height: 1px;
+	border: none;
+	background-color: rgba(50, 69, 99, 0.1);
+}
+
+.footer-lower {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+
+	& div {
+		display: inherit;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+
+		& a {
+			color: #131820;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		& span {
+			font-size: 0.75rem;
+		}
+	}
+}
+
+
+/**  
+ * Input Fields Styling
+ */
+
+.dropdown {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	width: 100%;
+
+	& label {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	& select {
+		padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+
+		font-size: 1rem;
+
+		cursor: pointer;
+		border: 1px solid rgba(19, 24, 32, 0.20);
+		border-radius: 6px;
+		background-color: #ffffff;
+
+		background-image: url("data:image/svg+xml,%3Csvg fill='gray' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 0.75rem center;
+		background-size: 1rem;
+
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		&:focus {
+			border: 2px solid #21C45D;
+			outline: none;
+		}
+	}
+}
+
+.number-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	width: 100%;
+
+	& div {
+		padding-left: 4px;
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.5rem;
+
+		& i {
+			color: #131820;
+		}
+
+		& label {
+			font-size: 1rem;
+			font-weight: 500;
+		}
+	}
+
+	& input {
+		padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+
+		font-size: 1rem;
+
+		cursor: pointer;
+		border: 1px solid rgba(19, 24, 32, 0.20);
+		border-radius: 6px;
+		background-color: #ffffff;
+
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		&:focus {
+			border: 2px solid #21C45D;
+			outline: none;
+		}
+	}
+}
+
+
+
+
+/**  
+ * Button Styling
+ */
+
+.action-btn {
+	padding: 0.75rem 1.75rem;
+
+	font-size: 1rem;
+	text-decoration: none;
+	font-weight: 600;
+
+	cursor: pointer;
+	transition: opacity 0.3s ease, transform 0.2s ease;
+
+	border: 1px solid #21C45D;
+	background-color: #21C45D;
+	color: #ffffff;
+	border-radius: 0.5rem;
+
+	&:hover {
+		transform: translateY(-2px);
+		opacity: 0.75;
+	}
+}
+
+.action-btn-disabled {
+	padding: 0.75rem 1.75rem;
+
+	font-size: 1rem;
+	text-decoration: none;
+	font-weight: 600;
+
+	cursor: pointer;
+	transition: opacity 0.3s ease, transform 0.2s ease;
+
+	border: 1px solid #21c45d81;
+	background-color: #21c45d81;
+	color: #ffffff;
+	border-radius: 0.5rem;
+}
+
+.action-outlined-btn {
+	padding: 0.75rem 1.75rem;
+
+	font-size: 1rem;
+	text-decoration: none;
+	font-weight: 600;
+
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+
+	border: 1px solid rgba(19, 24, 32, 0.25);
+	background-color: transparent;
+	color: #131820;
+	border-radius: 0.5rem;
+
+	&:hover {
+		transform: translateY(-2px);
+		background-color: #f1ca5c;
+	}
+}

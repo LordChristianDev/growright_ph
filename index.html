@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GrowRight PH</title>
+
+	<!-- Styling -->
+	<link rel="stylesheet" href="index.css">
+
+	<!-- Icons & SVGs -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<!-- Appbar -->
+	<header class="appbar">
+		<div class="appbar-container">
+			<a class="appbar-logo-link" href="index.html">
+				<div class="appbar-logo">
+					<img src="assets/images/logo.png" alt="Logo" />
+					<h4>GrowRight PH</h3>
+				</div>
+			</a>
+
+			<div class="appbar-navs">
+				<div class="appbar-links">
+					<a href="#about">About<span class="underline"></span></a>
+					<a href="#plan">Plan<span class="underline"></span></a>
+					<a href="#calendar">Calendar<span class="underline"></span></a>
+
+					<a href="#contact"><button class="action-btn">Get Started</button></a>
+				</div>
+
+			</div>
+
+			<!-- Mobile Menu Toggle -->
+			<div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+				<div class="hamburger"></div>
+				<div class="hamburger"></div>
+				<div class="hamburger"></div>
+			</div>
+		</div>
+	</header>
+
+	<div class="mobile-menu" id="mobileMenu">
+		<nav class="mobile-appbar-links">
+			<a href="#about" onclick="closeMobileMenu()">About</a>
+			<a href="#plan" onclick="closeMobileMenu()">Plan</a>
+			<a href="#calendar" onclick="closeMobileMenu()">Calendar</a>
+
+			<a href="#contact"><button class="action-btn">Get Started</button></a>
+		</nav>
+	</div>
+
+	<!-- Hero Section -->
+	<section class="hero" id="hero">
+		<div class="hero-container">
+			<div class="hero-content">
+				<div class="hero-content-text">
+					<h3>Smart Crop Planning for Every <span>Filipino Farmer</span></h3>
+					<p>Make data-driven decisions about what crops to plant. Get personalized recommendations based on
+						your
+						location, soil type, and local climate conditions across the Philippines.</p>
+				</div>
+
+				<div class="hero-content-btn">
+					<a href="#plan"><button class="action-btn">Plan your Crops Now</button></a>
+					<a href="#about"><button class="action-outlined-btn">Learn How It Works</button></a>
+				</div>
+			</div>
+
+			<img class="hero-image" src="assets/images/farmers.png" alt="Logo" />
+		</div>
+	</section>
+
+
+	<!-- About Section -->
+	<section class="about" id="about">
+		<div class="about-container">
+			<div class="about-heading">
+				<h4>Empowering Filipino Farmers</h4>
+				<p>GrowRight PH helps farmers make data-driven decisions about what crops to plant based on
+					location-specific environmental conditions across the Philippines.</p>
+			</div>
+
+			<div class="about-info">
+				<div class="about-info-card">
+					<div class="about-info-card-icon">
+						<i class="fas fa-location-arrow"></i>
+					</div>
+					<h5>Location-Based</h5>
+					<p>Select any location in the Philippines to get specific recommendations tailored to local
+						conditions.
+					</p>
+				</div>
+
+				<div class="about-info-card">
+					<div class="about-info-card-icon">
+						<i class="fas fa-info"></i>
+					</div>
+					<h5>Data-Driven</h5>
+					<p>Recommendations based on climate data, rainfall patterns, soil types, and other critical factors.
+					</p>
+				</div>
+
+				<div class="about-info-card">
+					<div class="about-info-card-icon">
+						<i class="fas fa-seedling"></i>
+					</div>
+					<h5>Smart Farming</h5>
+					<p>Optimize your crop selection and timing to improve yields and reduce risks from changing climate
+						patterns.
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Plan Section -->
+	<section class="plan" id="plan">
+		<div class="plan-container">
+			<div class="plan-heading">
+				<h4>Plan Your Crop Selection</h4>
+				<p>Choose your preferred crops and specify your local growing conditions to get a personalized crop
+					calendar and planting schedule.</p>
+			</div>
+
+			<div class="plan-card">
+				<div class="plan-card-heading">
+					<div class="plan-card-heading-title">
+						<i class="fas fa-seedling"></i>
+						<h6>Crop Planning Assistant</h6>
+					</div>
+
+					<p>Select your preferred crops and specify your local growing conditions for personalized farming
+						guidance.</p>
+				</div>
+
+				<div class="plan-card-inputs">
+					<div class="plan-card-dropdowns">
+						<div class="dropdown">
+							<label for="crops">Select Common Crop</label>
+							<select id="crops" name="crops">
+								<option value="rice">Rice</option>
+								<option value="coconut">Corn</option>
+								<option value="coconut">Coconut</option>
+								<option value="banana">Banana</option>
+								<option value="sugarcane">Sugar Cane</option>
+								<option value="coffee">Coffee</option>
+								<option value="cacao">Cacao</option>
+								<option value="mango">Mango</option>
+								<option value="papaya">Papaya</option>
+								<option value="eggplant">Eggplant</option>
+								<option value="tomato">Tomato</option>
+								<option value="onion">Onion</option>
+								<option value="sweetpotato">Sweet Potato</option>
+								<option value="casava">Casava</option>
+								<option value="pineapple">Pineapple</option>
+							</select>
+						</div>
+
+						<div class="dropdown">
+							<label for="category">Crop Category</label>
+							<select id="category" name="category">
+								<option value="rice">Cereal Crops (Rice, Corn)</option>
+								<option value="fruit">Fruit Crops (Banana, Mango, Papaya)</option>
+								<option value="vegetable">Vegetable Crops (Eggplant, Tomato, Onion)</option>
+								<option value="root">Root Crops (Sweet Potato, Casava)</option>
+								<option value="tree">Tree Crops (Coconut, Coffee, Cacao)</option>
+								<option value="cash">Cash Crops (Sugarcane, Pineapple)</option>
+							</select>
+						</div>
+
+						<div class="dropdown">
+							<label for="soil">Soil Type</label>
+							<select id="soil" name="soil">
+								<option value="clay">Clay</option>
+								<option value="clayloam">Clay Loam</option>
+								<option value="sandyloam">Sandy Loam</option>
+								<option value="siltloam">Silt Loam</option>
+								<option value="loam">Loam</option>
+								<option value="sandy">Sandy</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="plan-card-fields">
+						<div class="number-field">
+							<div class="number-field-label">
+								<i class="fas fa-thermometer-quarter"></i>
+								<label for="temperature">Average Temperature (°C)</label>
+							</div>
+							<input type="number" id="temperature" name="temperature" min="0" max="60" step="1"
+								placeholder="e.g. 27">
+						</div>
+
+						<div class="number-field">
+							<div class="number-field-label">
+								<i class="fas fa-cloud-rain"></i>
+								<label for="rainfall">Annual Rainfall (mm)</label>
+							</div>
+							<input type="number" id="rainfall" name="rainfall" min="0" max="5000" step="1"
+								placeholder="e.g. 2000">
+						</div>
+
+						<div class="number-field">
+							<div class="number-field-label">
+								<i class="fas fa-mountain"></i>
+								<label for="elevation">Elevation (meters above sea level)</label>
+							</div>
+							<input type="number" id="elevation" name="elevation" min="0" max="200" step="1"
+								placeholder="e.g. 100">
+						</div>
+					</div>
+				</div>
+
+				<a href="#plan"><button class="action-btn-disabled">Generate Crop Calndar</button></a>
+			</div>
+		</div>
+	</section>
+
+	<section class="calendar" id="calendar">
+		<div class="calendar-container">
+			<div class="calendar-heading">
+				<h4>Crop Calendar</h4>
+				<p>Plan your planting and harvesting schedule with our interactive crop calendar, optimized for your
+					local climate conditions.
+				</p>
+			</div>
+
+			<div class="calendar-card">
+				<div class="calendar-card-heading">
+					<div class="plan-card-heading-title">
+						<div class="plan-card-heading-title-label">
+							<i class="fas fa-calendar"></i>
+							<h6><span id="crop-name">Rice</span> Crop Calendar</h6>
+						</div>
+						<p><span id="crop-type">Cereal Crop</span> - Optimal planting and harvesting schedule organized
+							by season</p>
+					</div>
+
+					<div class="dropdown">
+						<select id="cropselection" name="cropselection">
+							<option value="rice" data-type="Cereal Crop">Rice (Cereal Crop)</option>
+							<option value="corn" data-type="Cereal Crop">Corn (Cereal Crop)</option>
+							<option value="coconut" data-type="Tree Crop">Coconut (Tree Crop)</option>
+							<option value="banana" data-type="Fruit Crop">Banana (Fruit Crop)</option>
+							<option value="eggplant" data-type="Vegetable Crop">Eggplant (Vegetable Crop)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Rice Class -->
+				<div class="calendar-rice">
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>Wet Season (Main Crop)</span>
+							<p>May - October</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>May</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-blue">Land Preparation</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>June</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-green">Planting/Sowing</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>July</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Vegetative Growth</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>August</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Reproductive Stage</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>September</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Grain Filling</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>October</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-yellow">Harvest</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>Dry Season (Second Crop)</span>
+							<p>November - April</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>November</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-blue">Land Preparation</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>December</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-green">Planting/Sowing</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>January</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Vegetative Growth</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>February</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Reproductive Stage</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>March</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Grain Filling</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>April</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-yellow">Harvest</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="calendar-corn">
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>First Cropping (Dry Season)</span>
+							<p>January - May</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>January</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-blue">Land Preparation</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>February</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Planting</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>March</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Vegetative Growth</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>April</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Taseling/Silking</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>May</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-yellow">Harvest</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>Dry Season (Second Crop)</span>
+							<p>November - April</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>June</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-blue">Land Preparation</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>July</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Planting</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>August</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Vegetative Growth</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>September</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Taseling/Silking</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>October</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-yellow">Harvest</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="calendar-coconut">
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>Year-round Production</span>
+							<p>Continuous Harvest</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>January</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Maintenance</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>February</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Fertilization</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>March</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Pruning</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>April</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Irrigation</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>May</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Pest Control</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>June</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Peak Harvest</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>July</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Peak Harvest</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>August</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Peak Harvest</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>September</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Processing</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>October</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Maintenance</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>November</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Fertilization</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>December</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Planning</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="calendar-banana">
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>Year-round with Peak Seasons</span>
+							<p>Continuous Harvest</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>January</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Maintenance</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>February</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Planting</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>March</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-green">Harvest/Growth</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>April</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Peak Harvest</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>May</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-grey">Peak Harvest</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>June</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Growth Period</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>July</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Flowering</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>August</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Fruit Development</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>September</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Processing</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>October</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-grey">Peak Harvest</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>November</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Maintenance</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>December</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Harvest/Planning</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="calendar-eggplant">
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>Dry Season Planting</span>
+							<p>October - February</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>October</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-blue">Land Preparation</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>November</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Sowing/Transplanting</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>December</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Vegetative Growth</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>January</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-grey">Flowering</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>February</p>
+									<i class="fas fa-sun"></i>
+								</div>
+
+								<span class="calendar-yellow">Harvest</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="calendar-season">
+						<div class="calendar-season-heading">
+							<span>Wet Season Planting</span>
+							<p>May - September</p>
+						</div>
+
+						<div class="calender-season-carousel">
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>May</p>
+									<i class="fas fa-cloud"></i>
+								</div>
+
+								<span class="calendar-blue">Land Preparation</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>June</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Sowing/Transplanting</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>July</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Vegetative Growth</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>August</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-grey">Flowering</span>
+							</div>
+
+							<div class="calendar-card-prep">
+								<div class="calendar-card-heading">
+									<p>September</p>
+									<i class="fas fa-cloud-rain"></i>
+								</div>
+
+								<span class="calendar-yellow">Harvest</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="calendar-legend">
+					<span>Rainfall Legend</span>
+
+					<div class="calendar-legend-items">
+						<div class="calendar-legend-item">
+							<i class="fas fa-sun"></i>
+							<span>Low</span>
+						</div>
+
+						<div class="calendar-legend-item">
+							<i class="fas fa-cloud"></i>
+							<span>Moderate</span>
+						</div>
+
+						<div class="calendar-legend-item">
+							<i class="fas fa-cloud-rain"></i>
+							<span>High</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section class="contact" id="contact">
+		<div class="contact-container">
+			<div class="contact-info">
+				<h3>Created by Lord Christian Carl H. Regacho</h3>
+				<p>I'm a web developer from the Philippines passionate about building thoughtful, user-focused digital
+					experiences.</p>
+
+				<div class="contact-info-links">
+					<div class="contact-info-link">
+						<a href="https://www.linkedin.com/in/lordchristian-regacho/">
+							<i class="fab fa-linkedin"></i>
+							<span>LinkedIn</span>
+						</a>
+					</div>
+
+					<div class="contact-info-link">
+						<a href="mailto:lordchristian.regacho@gmail.com">
+							<i class="fas fa-envelope"></i>
+							<span>Email</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer Section -->
+	<footer class="footer">
+		<div class="footer-container">
+			<div class="footer-upper">
+				<div class="footer-info">
+					<a class="footer-logo-link" href="index.html">
+						<div class="footer-info-logo">
+							<img class="footer-logo-icon" src="assets/images/logo.png" alt="Logo" />
+							<h4 class="footer-logo-title">GrowRight PH</h3>
+						</div>
+					</a>
+
+					<p>Smart crop recommendations for Filipino<br> farmers based on location-specific<br> environmental
+						data.
+					</p>
+
+					<div class="footer-info-socials">
+						<a href="index.html"><i class="fab fa-facebook-square"></i></a>
+						<a href="index.html"><i class="fab fa-instagram"></i></a>
+						<a href="index.html"><i class="fab fa-linkedin"></i></a>
+					</div>
+				</div>
+
+				<div class="footer-pages">
+					<div class="footer-navs">
+						<h6>Features</h6>
+
+						<div class="footer-navs-links">
+
+							<div>
+								<a href="#about">About</a>
+								<a href="#plan">Plan</a>
+								<a href="#calendar">Calendar</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="footer-navs">
+						<h6>About</h6>
+
+						<div class="footer-navs-links">
+							<div>
+								<a href="#about">Our Mission</a>
+								<a href="#about">Team</a>
+								<a href="#about">Partners</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr class="footer-line">
+
+			<div class="footer-lower">
+				<span>&copy; 2025 Peter Clark. All rights reserved.</span>
+
+				<div>
+					<a href="index.html">Privacy Policy</a>
+					<span>•</span>
+					<a href="index.html">Terms of Service</a>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+	<script>
+		// -- Opens Mobile Menu
+		function toggleMobileMenu() {
+			const mobileMenu = document.getElementById('mobileMenu');
+			const toggle = document.querySelector('.mobile-menu-toggle');
+
+			mobileMenu.classList.toggle('active');
+			toggle.classList.toggle('active');
+		}
+		// -- Closes Mobile Menu
+		function closeMobileMenu() {
+			const mobileMenu = document.getElementById('mobileMenu');
+			const toggle = document.querySelector('.mobile-menu-toggle');
+
+			mobileMenu.classList.remove('active');
+			toggle.classList.remove('active');
+		}
+
+		// -- In-charge of Closing the Menu when you Click Outside
+		document.addEventListener('click', function (event) {
+			const mobileMenu = document.getElementById('mobileMenu');
+			const toggle = document.querySelector('.mobile-menu-toggle');
+
+			if (!toggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+				mobileMenu.classList.remove('active');
+				toggle.classList.remove('active');
+			}
+		});
+
+		// -- In-charge of Closing Menu when size Reaches Desktop Size
+		window.addEventListener('resize', function () {
+			if (window.innerWidth > 900) {
+				const mobileMenu = document.getElementById('mobileMenu');
+				const toggle = document.querySelector('.mobile-menu-toggle');
+
+				mobileMenu.classList.remove('active');
+				toggle.classList.remove('active');
+			}
+		});
+
+		const state = {
+			cropName: 'Rice',
+			cropType: 'Cereal Crop',
+			cropKey: 'rice'
+		};
+
+		const cropNameSpan = document.getElementById('crop-name');
+		const cropTypeSpan = document.getElementById('crop-type');
+		const cropSelect = document.getElementById('cropselection');
+
+		function updateDOM() {
+			cropNameSpan.textContent = state.cropName;
+			cropTypeSpan.textContent = state.cropType;
+
+			const cropKeys = ['rice', 'corn', 'coconut', 'banana', 'eggplant'];
+			const allCalendars = cropKeys.map(key => document.querySelector(`.calendar-${key}`)).filter(Boolean);
+
+			allCalendars.forEach(div => div.style.display = 'none');
+
+			const currentCalendar = document.querySelector(`.calendar-${state.cropKey}`);
+			if (currentCalendar) currentCalendar.style.display = 'block';
+		}
+
+		cropSelect.addEventListener('change', function () {
+			const selectedOption = this.options[this.selectedIndex];
+			state.cropKey = selectedOption.value;
+			state.cropName = selectedOption.textContent.split(' (')[0];
+			state.cropType = selectedOption.getAttribute('data-type');
+			updateDOM();
+		});
+
+		updateDOM();
+
+	</script>
+</body>
+
+</html>
