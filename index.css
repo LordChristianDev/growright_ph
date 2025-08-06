@@ -245,7 +245,7 @@ footer {
 		max-width: 80rem;
 
 		& img {
-			flex: 1;
+			flex: 1 0 20rem;
 
 			object-fit: cover;
 			transition: transform 0.3s ease;
@@ -265,8 +265,7 @@ footer {
 }
 
 .hero-content {
-	flex: 1 0 45%;
-
+	flex: 1 0 20rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -295,6 +294,7 @@ footer {
 		gap: 1rem;
 	}
 }
+
 
 /**  
  * About Styling
@@ -1145,9 +1145,10 @@ footer {
 .action-btn {
 	padding: 0.75rem 1.75rem;
 
+	font-family: 'Mulish', sans-serif;
 	font-size: 1rem;
 	text-decoration: none;
-	font-weight: 600;
+	font-weight: 700;
 
 	cursor: pointer;
 	transition: opacity 0.3s ease, transform 0.2s ease;
@@ -1166,9 +1167,10 @@ footer {
 .action-btn-disabled {
 	padding: 0.75rem 1.75rem;
 
+	font-family: 'Mulish', sans-serif;
 	font-size: 1rem;
 	text-decoration: none;
-	font-weight: 600;
+	font-weight: 700;
 
 	cursor: pointer;
 	transition: opacity 0.3s ease, transform 0.2s ease;
