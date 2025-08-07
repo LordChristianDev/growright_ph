@@ -882,7 +882,7 @@ footer {
 }
 
 /**  
- * Input Fields Styling
+ * Footer Styling
  */
 
 .footer {
@@ -1184,6 +1184,7 @@ footer {
 .action-outlined-btn {
 	padding: 0.75rem 1.75rem;
 
+	font-family: 'Mulish', sans-serif;
 	font-size: 1rem;
 	text-decoration: none;
 	font-weight: 600;
